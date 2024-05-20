@@ -1,3 +1,9 @@
 <app-header></app-header>
 
-<app-greetings></app-greetings>
+<div [id]="computer.id">
+  <h2>{{ computer.name }}</h2>
+  <img [src]="computer.img" alt="" class="product-img">
+  <h3>{{ computer.price }}</h3>
+</div>
+
+<input type="text" [placeholder]="inputPlaceholder">
