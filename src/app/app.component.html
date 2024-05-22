@@ -1,9 +1,9 @@
 <app-header></app-header>
 
-<div [id]="computer.id">
-  <h2>{{ computer.name }}</h2>
-  <img [src]="computer.img" alt="" class="product-img">
-  <h3>{{ computer.price }}</h3>
-</div>
 
-<input type="text" [placeholder]="inputPlaceholder">
+
+<input type="text" [(ngModel)]="personName">
+<h2 [id]="myId">{{ personName }}</h2>
+<button (click)="cleanPersonName()">Cambiar nombre</button>
+
+<app-product-card></app-product-card>

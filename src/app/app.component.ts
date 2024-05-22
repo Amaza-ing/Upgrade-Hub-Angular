@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/header/header.component';
-import Product from './models/Product';
+import { ProductCardComponent } from './components/product-card/product-card.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent],
+  imports: [RouterOutlet, FormsModule, HeaderComponent, ProductCardComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
@@ -14,21 +15,18 @@ export class AppComponent {
   personName: string;
   personAge: number;
   isFromMadrid: boolean;
-  computer: Product;
   inputPlaceholder: string;
+  myId: string;
 
   constructor() {
-    this.personName = 'Adrián';
+    this.personName = '';
     this.personAge = 33;
     this.isFromMadrid = false;
-    this.inputPlaceholder = 'Compra este producto';
+    this.inputPlaceholder = 'Nombre de usuario';
+    this.myId = "patata";
+  }
 
-    this.computer = {
-      id: 1,
-      name: 'Computer',
-      price: 1000,
-      isForSale: true,
-      img: 'https://cdn.britannica.com/77/170477-050-1C747EE3/Laptop-computer.jpg',
-    };
+  cleanPersonName(): void {
+    this.personName = "";
   }
 }
