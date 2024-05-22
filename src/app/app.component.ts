@@ -3,11 +3,18 @@ import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/header/header.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
+import { UserFormComponent } from './components/user-form/user-form.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, FormsModule, HeaderComponent, ProductCardComponent],
+  imports: [
+    RouterOutlet,
+    FormsModule,
+    HeaderComponent,
+    ProductCardComponent,
+    UserFormComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
@@ -23,10 +30,10 @@ export class AppComponent {
     this.personAge = 33;
     this.isFromMadrid = false;
     this.inputPlaceholder = 'Nombre de usuario';
-    this.myId = "patata";
+    this.myId = 'patata';
   }
 
   cleanPersonName(): void {
-    this.personName = "";
+    this.personName = '';
   }
 }
