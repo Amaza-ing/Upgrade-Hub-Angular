@@ -1,9 +1,24 @@
 <app-header></app-header>
 
-<app-user-form></app-user-form>
+<!-- <app-user-form></app-user-form> -->
 
 <!-- <input type="text" [(ngModel)]="personName" [placeholder]="inputPlaceholder" />
 <h2 [id]="myId">{{ personName }}</h2>
-<button (click)="cleanPersonName()">Limpiar nombre</button> -->
+<button (click)="cleanPersonName()">Limpiar nombre</button>
 
-<app-product-card></app-product-card>
+@if (personName.length > 10) {
+  El usuario tiene un nombre largo
+  <h2>{{ personName }}</h2>
+}
+@else if (personName.length < 3) {
+  <p>El usuario tiene un nombre corto</p>
+}
+@else {
+  <h2>El usuario tiene un nombre normal</h2>
+}
+
+@if (showProduct) {
+  <app-product-card></app-product-card>
+} -->
+
+<app-product-list></app-product-list>
