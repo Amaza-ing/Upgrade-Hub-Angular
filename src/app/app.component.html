@@ -1,24 +1,23 @@
 <app-header></app-header>
 
+<app-country [myCountry]="countryVariable"></app-country>
+<app-country myCountry="Francia"></app-country>
+
+<!-- <app-person></app-person> -->
+
 <!-- <app-user-form></app-user-form> -->
 
-<!-- <input type="text" [(ngModel)]="personName" [placeholder]="inputPlaceholder" />
-<h2 [id]="myId">{{ personName }}</h2>
-<button (click)="cleanPersonName()">Limpiar nombre</button>
-
-@if (personName.length > 10) {
-  El usuario tiene un nombre largo
-  <h2>{{ personName }}</h2>
-}
-@else if (personName.length < 3) {
-  <p>El usuario tiene un nombre corto</p>
-}
-@else {
-  <h2>El usuario tiene un nombre normal</h2>
-}
-
-@if (showProduct) {
+<!-- @if (showProduct) {
   <app-product-card></app-product-card>
 } -->
 
+<label for="show-products">Mostrar Productos</label>
+<input
+  type="checkbox"
+  name="show-products"
+  id="show-products"
+  [(ngModel)]="showProducts"
+/>
+@if (showProducts) {
 <app-product-list></app-product-list>
+}

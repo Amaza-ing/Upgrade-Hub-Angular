@@ -1,0 +1,11 @@
+<input type="text" [(ngModel)]="personName" />
+<h2>{{ personName }}</h2>
+<button (click)="cleanPersonName()">Limpiar nombre</button>
+
+@if (personName.length > 10) {
+<h2>El nombre de la persona es largo</h2>
+} @else if (personName.length < 3) {
+<h2>El nombre de la persona es muy corto</h2>
+} @else {
+<h2>El nombre la persona tiene una longitud normal</h2>
+}

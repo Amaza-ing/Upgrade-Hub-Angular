@@ -1,5 +1,7 @@
-<div [id]="computer.id" class="product-card">
-  <h2>{{ computer.name }}</h2>
-  <img [src]="computer.img" alt="" class="product-img">
-  <h3>{{ computer.price }}</h3>
+<div [id]="product.id" class="product-card">
+  <h2>{{ product.name }}</h2>
+  <img [src]="product.img" alt="" class="product-img" />
+  <h3 class="product-price" [ngClass]="{ forsale: product.isForSale }">
+    {{ product.price }}
+  </h3>
 </div>

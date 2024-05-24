@@ -1,23 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { NgClass } from '@angular/common';
 import Product from '../../models/Product';
 
 @Component({
   selector: 'app-product-card',
   standalone: true,
-  imports: [],
+  imports: [NgClass],
   templateUrl: './product-card.component.html',
   styleUrl: './product-card.component.css'
 })
 export class ProductCardComponent {
-  computer: Product;
+  @Input()
+  product: Product;
 
   constructor() {
-    this.computer = {
-      id: 1,
-      name: 'Computer',
-      price: 1000,
+    this.product = {
+      id: 0,
+      name: '',
+      price: 0,
       isForSale: true,
-      img: 'https://cdn.britannica.com/77/170477-050-1C747EE3/Laptop-computer.jpg',
+      img: '',
     };
   }
 }
