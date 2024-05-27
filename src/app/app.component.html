@@ -1,15 +1,14 @@
 <app-header></app-header>
 
-<app-country [myCountry]="countryVariable"></app-country>
-<app-country myCountry="Francia"></app-country>
+<app-country
+  [myCountry]="countryVariable"
+  (sendMsg)="showMsg($event)"
+></app-country>
+<app-country myCountry="Francia" (sendMsg)="showMsg($event)"></app-country>
 
 <!-- <app-person></app-person> -->
 
-<!-- <app-user-form></app-user-form> -->
-
-<!-- @if (showProduct) {
-  <app-product-card></app-product-card>
-} -->
+<app-user-form (login)="login($event)"></app-user-form>
 
 <label for="show-products">Mostrar Productos</label>
 <input

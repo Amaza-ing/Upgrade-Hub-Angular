@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-country',
@@ -10,4 +10,15 @@ import { Component, Input } from '@angular/core';
 export class CountryComponent {
   @Input()
   myCountry: string = '';
+
+  @Output()
+  sendMsg: EventEmitter<string>;
+
+  constructor() {
+    this.sendMsg = new EventEmitter<string>;
+  }
+
+  emitSendMsg(): void {
+    this.sendMsg.emit("Me encanta este pais");
+  }
 }

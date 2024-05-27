@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import User from '../../models/User';
 import { FormsModule } from '@angular/forms';
 
@@ -10,9 +10,14 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './user-form.component.css',
 })
 export class UserFormComponent {
+  @Output()
+  login: EventEmitter<User>;
+
   user: User;
 
   constructor() {
+    this.login = new EventEmitter<User>();
+
     this.user = {
       userName: '',
       email: '',
@@ -27,6 +32,7 @@ export class UserFormComponent {
 
     if (this.user.password === pass) {
       console.log('El usuario ha hecho login: ', this.user);
+      this.login.emit(this.user);
     } else {
       console.log('La contraseña es incorrecta');
     }
