@@ -15,4 +15,11 @@
   .product-price.forsale {
     color: blue;
   }
+  .product-price:not(.forsale) {
+    color: red;
+    text-decoration: line-through;
+  }
+  .product-price:not(.forsale)::after {
+    content: "Not Available";
+  }
 }

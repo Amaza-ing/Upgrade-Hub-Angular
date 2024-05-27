@@ -1,5 +1,12 @@
-<header class="header">
+<header class="header" [ngClass]="{ dark: isDark }">
   <h1 class="title">Bienvenidos a mi web</h1>
+
+  @if (isDark) {
+  <h2><span class="btn-dark" (click)="toggleDark()">🌞</span></h2>
+  } @else {
+  <h2><span class="btn-dark" (click)="toggleDark()">🌙</span></h2>
+  }
+
   <app-greetings></app-greetings>
   <nav class="navbar">
     <ul class="nav-list">

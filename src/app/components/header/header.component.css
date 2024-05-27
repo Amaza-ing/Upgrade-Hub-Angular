@@ -4,6 +4,14 @@
   text-align: center;
 }
 
+.dark {
+  background-color: black;
+}
+
+.btn-dark {
+  cursor: pointer;
+}
+
 .navbar {
   .nav-list {
     display: flex;
