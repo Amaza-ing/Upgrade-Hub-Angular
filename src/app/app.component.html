@@ -1,5 +1,11 @@
 <app-header></app-header>
 
+@if (username) {
+  <h2>Usuario logado: {{ username }}</h2>
+}
+
+<app-output-parent></app-output-parent>
+
 <app-country
   [myCountry]="countryVariable"
   (sendMsg)="showMsg($event)"

@@ -6,6 +6,7 @@ import { UserFormComponent } from './components/user-form/user-form.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { PersonComponent } from './components/person/person.component';
 import { CountryComponent } from './components/country/country.component';
+import { OutputParentComponent } from './components/output-parent/output-parent.component';
 import User from './models/User';
 
 @Component({
@@ -18,7 +19,8 @@ import User from './models/User';
     ProductListComponent,
     PersonComponent,
     FormsModule,
-    CountryComponent
+    CountryComponent,
+    OutputParentComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
@@ -26,17 +28,20 @@ import User from './models/User';
 export class AppComponent {
   showProducts: boolean;
   countryVariable: string;
+  username: string;
 
   constructor() {
     this.showProducts = true;
-    this.countryVariable = "España";
+    this.countryVariable = 'España';
+    this.username = '';
   }
 
   showMsg(msg: string): void {
-    console.log(msg);    
+    console.log(msg);
   }
 
   login(user: User): void {
-    console.log(user);    
+    console.log('Desde el padre: ', user);
+    this.username = user.userName;
   }
 }
