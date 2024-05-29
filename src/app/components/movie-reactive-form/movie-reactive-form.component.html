@@ -1,0 +1,23 @@
+<h2>Movie Reactive Form</h2>
+
+<form (submit)="handleSubmit()" [formGroup]="movieForm">
+  <fieldset>
+    <label for="movie-name">*Movie Name:</label>
+    <input type="text" id="movie-name" formControlName="name">
+    @if (name.invalid && name.touched) {
+      <p class="form-error">Name is required</p>
+    }
+  </fieldset>
+  <fieldset>
+    <label for="duration">*Movie Duration:</label>
+    <input type="number" id="duration" formControlName="duration">
+    @if (duration.invalid && duration.touched) {
+      <p class="form-error">Duration is required</p>
+    }
+  </fieldset>
+  <fieldset>
+    <label for="director">Movie Director::</label>
+    <input type="text" id="director" formControlName="director">
+  </fieldset>
+  <button [disabled]="movieForm.invalid">Create Movie</button>
+</form>

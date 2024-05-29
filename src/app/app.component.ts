@@ -8,6 +8,7 @@ import { PersonComponent } from './components/person/person.component';
 import { CountryComponent } from './components/country/country.component';
 import { OutputParentComponent } from './components/output-parent/output-parent.component';
 import User from './models/User';
+import { MovieReactiveFormComponent } from './components/movie-reactive-form/movie-reactive-form.component';
 
 @Component({
   selector: 'app-root',
@@ -21,6 +22,7 @@ import User from './models/User';
     FormsModule,
     CountryComponent,
     OutputParentComponent,
+    MovieReactiveFormComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
