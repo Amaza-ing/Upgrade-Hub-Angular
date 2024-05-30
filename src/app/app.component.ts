@@ -9,6 +9,7 @@ import { CountryComponent } from './components/country/country.component';
 import { OutputParentComponent } from './components/output-parent/output-parent.component';
 import User from './models/User';
 import { MovieReactiveFormComponent } from './components/movie-reactive-form/movie-reactive-form.component';
+import { MovieComponent } from './components/movie/movie.component';
 
 @Component({
   selector: 'app-root',
@@ -22,7 +23,8 @@ import { MovieReactiveFormComponent } from './components/movie-reactive-form/mov
     FormsModule,
     CountryComponent,
     OutputParentComponent,
-    MovieReactiveFormComponent
+    MovieReactiveFormComponent,
+    MovieComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
